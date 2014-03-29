@@ -3,273 +3,105 @@ AUTO_ADD_GLOBAL_DEFINE_BY_NAME=HAVE_XLOG_FEATURE MTK_BT_PROFILE_MAPS MTK_FAN5405
 AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE=MTK_LCM_PHYSICAL_ROTATION LCM_WIDTH MTK_SHARE_MODEM_SUPPORT MTK_NEON_SUPPORT MTK_SHARE_MODEM_CURRENT LCM_HEIGHT MTK_SINGLE_3DSHOT_SUPPORT
 AUTO_ADD_GLOBAL_DEFINE_BY_VALUE=MTK_PLATFORM CUSTOM_KERNEL_LENS CUSTOM_KERNEL_MAIN_BACKUP_LENS CUSTOM_KERNEL_LCM MTK_MODEM_SUPPORT MTK_ATV_CHIP CUSTOM_KERNEL_MAIN_IMGSENSOR MTK_BT_CHIP MTK_WLAN_CHIP CUSTOM_KERNEL_SUB_BACKUP_IMGSENSOR MTK_IME_INPUT_ENGINE CUSTOM_KERNEL_MAIN_BACKUP_IMGSENSOR CUSTOM_KERNEL_FLASHLIGHT CUSTOM_KERNEL_SUB_IMGSENSOR CUSTOM_KERNEL_SUB_LENS CUSTOM_KERNEL_IMGSENSOR MTK_FM_RX_AUDIO MTK_COMBO_CHIP MTK_GPS_CHIP CUSTOM_KERNEL_SUB_BACKUP_LENS CUSTOM_KERNEL_MAIN_LENS MTK_FM_TX_AUDIO MTK_FM_CHIP MTK_IME_HANDWRITING_ENGINE CUSTOM_KERNEL_04_IMGSENSOR CUSTOM_KERNEL_05_IMGSENSOR CUSTOM_KERNEL_06_IMGSENSOR CUSTOM_KERNEL_07_IMGSENSOR CUSTOM_KERNEL_08_IMGSENSOR CUSTOM_KERNEL_09_IMGSENSOR CUSTOM_KERNEL_10_IMGSENSOR CUSTOM_KERNEL_11_IMGSENSOR CUSTOM_KERNEL_12_IMGSENSOR CUSTOM_KERNEL_04_LENS CUSTOM_KERNEL_05_LENS CUSTOM_KERNEL_06_LENS CUSTOM_KERNEL_07_LENS CUSTOM_KERNEL_08_LENS CUSTOM_KERNEL_09_LENS CUSTOM_KERNEL_10_LENS CUSTOM_KERNEL_11_LENS CUSTOM_KERNEL_12_LENS
 
-# Support build CTS or not
 BUILD_CTS=no
-
-# Decide whether to build kernel or not.
 BUILD_KERNEL=yes
-
-# Decide whether to build lk or not.
 BUILD_LK=no
-
-# The feature option is only applicable to MTK SDK project (banyan_addon). It decides what packages to produce. api: Create MTK SDK API package only (e.g. mtk_sdk_api_addon-10.1.zip) toolset: Create MTK SDK Toolset package only (e.g. mtk_sdk_toolset-1.0.zip) all: Create both MTK SDK API and Toolset package
 BUILD_MTK_SDK=
-
-# Decide whether to build preloader or not.
 BUILD_PRELOADER=yes
-
-# Decide whether to build uboot or not.
 BUILD_UBOOT=no
-
-# User can input ASCII string which is showed in About phone and bootimg header.
 CUSTOM_BUILD_VERNO=
-
-# It is used to decide MT6620 combo chip BT and WiFi antenna architecture.  The meaning of each value is defined as follows. Please note that "CUSTOM_HAL_ANT" setting must be consistent with customer's MT6620 antenna architecture layout. Improper setting may lead to BT/WiFi malfunctions
 CUSTOM_HAL_ANT=mt6620_ant_m1
-
-# For audio flinger's customization folder
-#CUSTOM_HAL_AUDIOFLINGER=audio
-
-# Configuration for bluetooth device port and baudrate
 CUSTOM_HAL_BLUETOOTH=bluetooth
-
-# User space camera driver:Camera related config, tuning setting and info. Assign build load path alps\mediatek\custom\common\hal\camera\camera
 CUSTOM_HAL_CAMERA=camera
 #CUSTOM_HAL_CAM_CAL=dummy_eeprom
-
-# 1. This value is used to control MT6620 patch path 2. mt6620 should be used for when MTK_COMBO_CHIP is set to MT6620E3 or later version.
 CUSTOM_HAL_COMBO=mt6620
 
-
-# CAMERA SETTINGS
-# User space driver: Sensor module might have calibration data such as lens shading. You can adopt it according to EEPROM part number. Now, it's only s24cs64a_eeprom
+#CM ZTE v970 
 CUSTOM_HAL_EEPROM=dummy_eeprom
-
-# User space camera flashlight driver. You can use this driver to choose camera flashlight type.
 CUSTOM_HAL_FLASHLIGHT=constant_flashlight
-#CM VERIFICAR8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
-# User space image sensor driver. Define  project used all image sensors. The value is combination of CUSTOM_HAL_MAIN_IMGSENSOR, CUSTOM_HAL_MAIN_BACKUP_IMGSENSOR, CUSTOM_HAL_SUB_IMGSENSOR, and CUSTOM_HAL_SUB_BACKUP_IMGSENSOR
 CUSTOM_HAL_IMGSENSOR=s5k4e1fx_mipi_raw s5k5cagx_mipi_yuv mt9v114_yuv
-
-# User space image sensor driver: Main camera (rear camera) used sensor related tuning, setting and calibration information. Value is used main sensor name.
 CUSTOM_HAL_MAIN_IMGSENSOR=s5k4e1fx_mipi_raw
-
-# User space image sensor driver: Main camera (rear camera) used backup sensor related tuning, setting and calibration information. Value is used main backup sensor name.
 CUSTOM_HAL_MAIN_BACKUP_IMGSENSOR=s5k5cagx_mipi_yuv
-
-# User space driver: Sub camera (front camera ) used sensor related tuning, setting and calibration information. Value is used sub sensor name.
 CUSTOM_HAL_SUB_IMGSENSOR=mt9v114_yuv
-
-# User space image sensor driver: Sub camera (front camera ) used backup sensor related tuning, setting and calibration information. Value is used sub backup sensor name.
 CUSTOM_HAL_SUB_BACKUP_IMGSENSOR=mt9v114_yuv
-
-#CUSTOM_HAL_LENS=dummy_lens sensordrive fm50af
 CUSTOM_HAL_LENS=dummy_lens fm50af
-
-# Lens driver config for main camera
 CUSTOM_HAL_MAIN_LENS=fm50af
-
-# Lens driver config for main camera (2nd solution)
 CUSTOM_HAL_MAIN_BACKUP_LENS=fm50af
-
-# Lens driver config for video telephony camera
 CUSTOM_HAL_SUB_LENS=dummy_lens
-
-# Lens driver config for video telephony camera (2nd solution)
 CUSTOM_HAL_SUB_BACKUP_LENS=dummy_lens
-
-# Kernel space image sensor driver: Camera sensor power control. Assign build load path alps\mediatek\custom\common\kernel\camera\camera
 CUSTOM_KERNEL_CAMERA=camera
 #CUSTOM_KERNEL_CAM_CAL=dummy_eeprom
-
-# Kernel space camera flashlight driver. You can use this driver to choose camera flashlight type.
 CUSTOM_KERNEL_FLASHLIGHT=constant_flashlight
-
-# Kernel space driver: Sensor module might have calibration data such as lens shading. You can adopt it according to EEPROM part number. Now, it's only s24cs64a_eeprom
 CUSTOM_KERNEL_EEPROM=dummy_eeprom
-
-# Kernel space image sensor driver. Define  project used all image sensors. The value is combination of CUSTOM_KERNEL_MAIN_IMGSENSOR, CUSTOM_KERNEL_MAIN_BACKUP_IMGSENSOR, CUSTOM_KERNEL_SUB_IMGSENSOR, and CUSTOM_KERNEL_SUB_BACKUP_IMGSENSOR
 CUSTOM_KERNEL_IMGSENSOR=s5k4e1fx_mipi_raw s5k5cagx_mipi_yuv mt9v114_yuv
-
-# Same as CUSTOM_HAL_LENS
-#CUSTOM_KERNEL_LENS=dummy_lens sensordrive fm50af
 CUSTOM_KERNEL_LENS=dummy_lens fm50af
-
-# Kernel space image sensor driver: Main camera (rear camera) used sensor driver. Value is used main sensor name.
 CUSTOM_KERNEL_MAIN_IMGSENSOR=s5k4e1fx_mipi_raw
-
-# Kernel space image sensor driver: Main camera (rear camera) used backup sensor driver. Value is used main backup sensor name.
-#CUSTOM_KERNEL_MAIN_BACKUP_IMGSENSOR=ov5647_mipi_raw
-
-# Kernel space image sensor driver: Sub camera (front camera) used sensor driver. Value is used sub sensor name.
-#CUSTOM_KERNEL_SUB_IMGSENSOR=ov7692_yuv
-
-# Kernel space image sensor driver: Sub camera (front camera) used backup sensor driver. Value is used sub backup sensor name.
-#CUSTOM_KERNEL_SUB_BACKUP_IMGSENSOR=ov7690_yuv
-
-# Lens driver config for main camera (2nd solution)
 CUSTOM_KERNEL_MAIN_BACKUP_LENS=ov5647af
-
-# Lens driver config for main camera
 CUSTOM_KERNEL_MAIN_LENS=fm50af
-
-# Lens driver config for video telephony camera (2nd solution)
 CUSTOM_KERNEL_SUB_BACKUP_LENS=dummy_lens
-
-# Lens driver config for video telephony camera
 CUSTOM_KERNEL_SUB_LENS=dummy_lens
-
-# Lens driver config for video telephony camera (2nd solution)
 CUSTOM_KERNEL_SUB_BACKUP_LENS=dummy_lens
-# END OFF CAMERA SETTINGS
-#CM VERIFICAR8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+#CM ZTE v970 
 
-
-# M-sensor hal layer library including daemon
-#david CUSTOM_HAL_MSENSORLIB=mmc328x akm8975 ami304 yamaha530 mag3110 akmd8963
 CUSTOM_HAL_MSENSORLIB=mmc328x akm8975
-
-# Sensor hal layer common part
 CUSTOM_HAL_SENSORS=sensor
-
-# Accelerometer sensor to detect accelerometer from x y z axis.
 CUSTOM_KERNEL_ACCELEROMETER=mma8452q_auto lis33dh_auto kxtf9_auto
-
-# ALSPS sensor driver to detect ambient light and the object is close or far away from device
 CUSTOM_KERNEL_ALSPS=stk31xx_auto tmd2771_auto
 MTK_AUTO_DETECT_ALSPS=yes
-
-# The battery feature is the MUST include feature and can not be disable. This feature provides battery monitor and charging. The system can not boot up without battery.
 CUSTOM_KERNEL_BATTERY=battery
-
-# It define customer kernel src location
 CUSTOM_KERNEL_CORE=src
-
-# To enable using driver customization tool for GPIO/EINT/ADC/KEYPAD/PMIC setting
 CUSTOM_KERNEL_DCT=dct
-
-# Detect headset cable plug in and out
 CUSTOM_KERNEL_HEADSET=accdet
 
-# Kernel space gyroscope sensor driver.
+#CM ZTE v970 may need further work
 CUSTOM_KERNEL_GYROSCOPE=l3g4200d
 
-# Key pad driver to report key event
 CUSTOM_KERNEL_KPD=kpd
-
-# Leds driver including green/red/blue
 CUSTOM_KERNEL_LEDS=mt65xx
 
-# Compass driver to detect compass raw data and report orientation data
+#CM ZTE v970 may need further work
 CUSTOM_KERNEL_MAGNETOMETER=akm8975_auto mmc328xma_auto
 
-# RTC driver customization
 CUSTOM_KERNEL_RTC=rtc
-
-# For audio kernel driver's speaker customization folder definition.
 CUSTOM_KERNEL_SOUND=amp_6329pmic_spk
-
-# Touch driver need to report correct touch axes
 CUSTOM_KERNEL_TOUCHPANEL=GT818B
-
-# Configuration for USB PHY
 CUSTOM_KERNEL_USB=mt6577
-
-# Support custom to set Vibrator timer.
 CUSTOM_KERNEL_VIBRATOR=vibrator
-
-# To choose LK LCM driver name
 CUSTOM_LK_LCM=hx8369_6575_dsi
-
-# A mechanism for customer to enable their own sign key.
 CUSTOM_PRELOADER_CUSTOM=custom
-
-# Support customer to implement and apply their own RSA security functions
 CUSTOM_SEC_AUTH_SUPPORT=no
-
-# Support customer to implement and apply their own RSA security functions
 CUSTOM_SEC_SIGNTOOL_SUPPORT=no
-
-# Add these variables to define the default input method and default input method languages.
 DEFAULT_INPUT_METHOD=com.sohu.inputmethod.sogou.SogouIME
 DEFAULT_LATIN_IME_LANGUAGES=en_US
-
-# This feature is for LG encrypt partition
 ENCRY_PARTITION_SUPPORT=no
-
-# Identify the project is a EVB project or not.
 EVB=no
-
-# To support GSM+CDMA dual talk feature
 EVDO_DT_SUPPORT=no
-
-# To support GSM+CDMA dual talk feature, and use VIA solution as CDMA modem.
 EVDO_DT_VIA_SUPPORT=no
-
-# Distinguish the Google or MTK RIL implementation
 GOOGLE_RELEASE_RIL=no
-
-# In Audio record,  Enable/disable AAC encode, yes: enable
-# no:disable
 HAVE_AACENCODE_FEATURE=yes
-#HAVE_ADPCMENCODE_FEATURE=yes
-
-# AEE (Android Exception Engine) that designed by Mediatek is an exception catching and debugging information generation mechanism.It can collect and dump information to filesystem (/sdcard/mtklog/aee_exp) when fatel occur(E.g. kernel panic/android system server crash and ..) HAVE_AEE_FEATURE will decide this feature enable or not.
 HAVE_AEE_FEATURE=yes
-
-# For audio post processing (Loudness) enable option
 HAVE_APPC_FEATURE=no
-
-# In Audio record,  Enable/disable AWB encode, yes: enable
-# no:disable
 HAVE_AWBENCODE_FEATURE=yes
-
-# CMMB feature compile option, if set yes, CMMB can build in load .
 HAVE_CMMB_FEATURE=no
 HAVE_GROUP_SCHEDULING=no
-
-# HAVE_MTKLOUDNESS_EFFECT=yes, enable MTK loudness effect,HAVE_MTKLOUDNESS_EFFECT=no disable loudness effect
 HAVE_MTKLOUDNESS_EFFECT=no
-
-# Whether support SRS Audio Effect Feature or not
 HAVE_SRSAUDIOEFFECT_FEATURE=no
-
-# In Audio record,  Enable/disable VORBIS encode, yes: enable
-# no:disable
 HAVE_VORBISENC_FEATURE=yes
-
-# It decide whether the system has XLOG mechanism. XLOG is a log filter mechanism which can filter the logs by tag before they are written to log buffer
 HAVE_XLOG_FEATURE=yes
-
-# If set this to yes, the files that generated in kernel build time will be at alps/kernel/out folder
 KBUILD_OUTPUT_SUPPORT=yes
-
-# There is requirement to implement UMTS TDD specific features in AP side, while have no such UMTS TDD specific options available.
 MODEM_UMTS_TDD128_MODE=no
 MTK_2IN1_SPK_SUPPORT=no
 MTK_2SDCARD_SWAP=no
-
-# For ACMT DEUG use
 MTK_ACMT_DEBUG=no
 MTK_ACWFDIALOG_APP=yes
 
-# Originally designed for ESD(Electrostatic discharge) test. For internal use only.
+# For internal use only.
 MTK_ANDROIDFACTORYMODE_APP=yes
 MTK_API_CHECK=yes
-
-# Operator customized feature, for CU only. List all uninstalled APKs in SD card. When user click an item, install it.
 MTK_APKINSTALLER_APP=yes
-
-# Speech enhancement in AP side function  enable Flag
 MTK_AP_SPEECH_ENHANCEMENT=yes
-
-# Auto Scene Detection (ASD) project aims at detecting the scene type of the surrounding environment in a fully automatic manner so that the imaging system could take corresponding actions to produce images of better qualities.
 MTK_ASD_SUPPORT=yes
-
-# Use  to wrap the ASF playback feature, AS 75 do not supporte the ASF Playback, so set no
 MTK_ASF_PLAYBACK_SUPPORT=no
-
-# Support whether can select MMS ringtone in AudioProfile
 MTK_AUDIOPROFILE_SELECT_MMS_RINGTONE_SUPPORT=no
 
 # Ape feature control option which is used for switch audio APE format playback: switch on:  MTK_AUDIO_APE_SUPPORT = yes switch off: MTK_AUDIO_APE_SUPPORT = no
@@ -304,6 +136,7 @@ MTK_BICR_SUPPORT=yes
 # Define MTK branch(internal use only)
 MTK_BRANCH=MAIN2.1
 
+#CM ZTE v970 end main features
 # Enable Brazil operator common requirements
 MTK_BRAZIL_CUSTOMIZATION=no
 
