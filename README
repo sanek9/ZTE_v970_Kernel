@@ -1,4 +1,11 @@
 This is the kernel Source code for the ZTE V970 / V970M / Smart a18 (MEDIATEK MT6577)
+Linux 3.4.0
+
+*********************************************
+
+Currently Upstreaming sources to Linux 3.4.5
+
+*********************************************
 
 
 Building the Kernel:
