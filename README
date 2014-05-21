@@ -8,18 +8,15 @@ cd to kernel dir
 ********************
 
 - Run script "./build.sh ztev970" to begin with the build process.
-  Once finished, you will find the new zImage file in the kernel root folder (./kernelFile).
 
+  Once finished, you will find:
+  - the new kernel file in the root folder ./build_result/kernel/kernel
+  - the compiled modules in the root folder ./build_result/modules/*.ko
 - Rename the "kernelFile" to "zImage" and repack with stock RamDisk
-
-
+ 
 - To perform a clean build run command "./build.sh clean ztev970".
-
 
 
 Have funn :)
 
 superdragonpt
-
-
-
