@@ -28,8 +28,8 @@ typedef struct{
 }VBAT_TO_PERCENT;
 
 /* Battery Temperature Protection */
-#define MAX_CHARGE_TEMPERATURE  55
-#define MIN_CHARGE_TEMPERATURE  0
+#define MAX_CHARGE_TEMPERATURE  65
+#define MIN_CHARGE_TEMPERATURE  -20
 #define ERR_CHARGE_TEMPERATURE  0xFF
 
 /* Recharging Battery Voltage */
@@ -41,7 +41,7 @@ typedef struct{
 #define USB_CHARGER_CURRENT_UNCONFIGURED	Cust_CC_70MA	// def CONFIG_USB_IF
 #define USB_CHARGER_CURRENT_CONFIGURED		Cust_CC_450MA	// def CONFIG_USB_IF
 #define USB_CHARGER_CURRENT					Cust_CC_450MA
-#define AC_CHARGER_CURRENT					Cust_CC_700MA	
+#define AC_CHARGER_CURRENT					Cust_CC_650MA //Cust_CC_700MA   //Cust_CC_650MA	
 
 /* Battery Meter Solution */
 #define CONFIG_ADC_SOLUTION 	1
@@ -80,16 +80,16 @@ VBAT_TO_PERCENT Batt_VoltToPercent_Table[] = {
 
 /* Teperature related setting */
 #define RBAT_PULL_UP_R             24000
-//#define RBAT_PULL_UP_VOLT          2500
+//#define RBAT_PULL_UP_VOLT        2500
 #define RBAT_PULL_UP_VOLT          1200
-//#define TBAT_OVER_CRITICAL_LOW     68237
-//#define TBAT_OVER_CRITICAL_LOW     483954
+//#define TBAT_OVER_CRITICAL_LOW   68237
+
+//#define TBAT_OVER_CRITICAL_LOW   483954
 #define TBAT_OVER_CRITICAL_LOW     70603
 #define BAT_TEMP_PROTECT_ENABLE    0
-#define BAT_NTC_10 1 //zhaoshaopeng define this 20120720 
-#define BAT_NTC_47 0
-//#define BAT_NTC_TSM_1 zhaoshaopeng undefine this for i8 20120720
-
+//#define BAT_NTC_10 		   1  
+#define BAT_NTC_47 		   1
+//#define BAT_NTC_TSM_1 
 
 /* Battery Notify */
 #define BATTERY_NOTIFY_CASE_0001
