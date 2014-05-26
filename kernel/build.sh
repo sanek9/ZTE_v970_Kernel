@@ -9,6 +9,7 @@ makeflags="-w -j8"
 makedefs="V=0"
 makejobs=${MAKEJOBS}
 curdir=`pwd`
+TOOLCHAIN="./toolchain/Arm_A9_linaro_4.8.3/bin"
 #if [ "${KBUILD_OUTPUT_SUPPORT}" == "yes" ];then
 #  outdir=$curdir/out
 #  mkdir -p $outdir
@@ -194,7 +195,7 @@ done
 
 echo "**** Patching all built modules (.ko) in /build_result/modules/ ****"
 cd ..
-find ./build_result/modules/ -type f -name '*.ko' | xargs -n 1 ./toolchain/arm-unknown-linux-gnueabi-linaro_4.6.4-2013.05/bin/arm-gnueabi-strip --strip-unneeded
+find ./build_result/modules/ -type f -name '*.ko' | xargs -n 1 $TOOLCHAIN/arm-gnueabi-strip --strip-unneeded
 echo "**** Finnish ****"
 
 echo "**** You can find kernelFile in root folder: /build_result/kernel/ ****"
