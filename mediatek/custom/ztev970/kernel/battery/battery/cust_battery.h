@@ -65,7 +65,7 @@ VBAT_TO_PERCENT Batt_VoltToPercent_Table[] = {
 
 /* Precise Tunning */
 //#define BATTERY_AVERAGE_SIZE 	30
-#define BATTERY_AVERAGE_SIZE   30
+#define BATTERY_AVERAGE_SIZE   12
 
 /* Common setting */
 #define R_CURRENT_SENSE		2	// 0.2 Ohm
@@ -85,8 +85,8 @@ VBAT_TO_PERCENT Batt_VoltToPercent_Table[] = {
 #define RBAT_PULL_UP_VOLT          1200
 //#define TBAT_OVER_CRITICAL_LOW   68237
 //#define TBAT_OVER_CRITICAL_LOW   483954
-#define TBAT_OVER_CRITICAL_LOW     124607
-#define BAT_TEMP_PROTECT_ENABLE    1
+#define TBAT_OVER_CRITICAL_LOW     70603
+#define BAT_TEMP_PROTECT_ENABLE    0
 
 //#define BAT_NTC_TSM_1	  	   
 //#define BAT_NTC_10_SEN_1	    
