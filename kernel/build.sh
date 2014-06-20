@@ -198,7 +198,8 @@ cd ..
 find ./build_result/modules/ -type f -name '*.ko' | xargs -n 1 $TOOLCHAIN/arm-eabi-strip --strip-unneeded
 echo "**** Finnish ****"
 
-echo "**** You can find kernelFile in root folder: /build_result/kernel/ ****"
-echo "**** You can find all modules in root folder: /build_result/modules/ ****"
-echo "**** Rename the kernelFile to zImage and repack with stock RamDisk ****"
+echo "**** You can find the new kernelFile in root folder: /build_result/kernel/ ****"
+echo "**** You can find the new modules in root folder: /build_result/modules/ ****"
+echo ""
+echo "**** Rename the kernelFile to zImage and repack with ROM RamDisk ****"
 
